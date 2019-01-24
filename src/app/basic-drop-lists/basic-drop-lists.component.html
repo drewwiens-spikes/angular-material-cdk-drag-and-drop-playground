@@ -1,0 +1,40 @@
+<div class="container">
+  <div
+    class="list"
+    cdkDropList
+    [id]="i ? 'B' : 'A'"
+    [cdkDropListConnectedTo]="div.value"
+    [cdkDropListData]="divarr[i]"
+    [cdkDropListDisabled]="disab[i].value"
+    [cdkDropListOrientation]="orie[i].value"
+    (cdkDropListDropped)="drop(i, $event)"
+    (cdkDropListEntered)="entered(i, $event)"
+    (cdkDropListExited)="exited(i, $event)"
+    (cdkDropListSorted)="sorted(i, $event)"
+    *ngFor="let div of divs; index as i"
+  >
+  <!-- {{sortedBlinks[i] | async}} -->
+    <div style="display: flex;">
+      <pre>Events: </pre>
+      <pre [ngClass]="droppedBlinks[i] | async">dropped</pre>&nbsp;&nbsp;
+      <pre [ngClass]="enteredBlinks[i] | async">entered</pre>&nbsp;&nbsp;
+      <pre [ngClass]="exitedBlinks[i] | async">exited</pre>&nbsp;&nbsp;
+      <pre [ngClass]="sortedBlinks[i] | async">sorted</pre>
+    </div>
+    <pre style="margin-top:0;">cdkDropList
+id=&quot;{{i ? 'B' : 'A'}}&quot;
+cdkDropListConnectedTo=&quot;<select [formControl]="div"><option></option><option>{{i ? 'A' : 'B'}}</option></select>&quot;
+[cdkDropListData]=&quot;arr{{i ? 'B' : 'A'}}&quot;
+[cdkDropListDisabled]=&quot;<input type="checkbox" [formControl]="disab[i]">&quot;
+cdkDropListOrientation=&quot;<select [formControl]="orie[i]"><option>horizontal</option><option>vertical</option></select>&quot;
+(cdkDropListDropped)=&quot;drop($event)&quot;</pre>
+    <hr>
+    <pre>arr{{i ? 'B' : 'A'}} = {{divarr[i] | json}}</pre>
+    <hr>
+    <pre>cdkDrag *ngFor=&quot;let str of arr{{i ? 'B' : 'A'}}&quot;</pre>
+    <span class="row" *ngIf="orie[i].value === 'horizontal'">
+      <pre cdkDrag *ngFor="let str of divarr[i]" class="draggable">{{str}}</pre>
+    </span>
+    <pre cdkDrag class="draggable" *ngFor="let str of (orie[i].value === 'vertical' && divarr[i]) || []">{{str}}</pre>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+div.container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+div.outer {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 20px;
+}
+
+div.list {
+  border: 1px solid black;
+  min-width: 100px;
+  padding: 10px;
+}
+
+.draggable {
+  /* display: block; */
+  max-width: fit-content;
+  border: 1px solid black;
+  background-color: white;
+  padding: 5px;
+}
+
+span > pre.draggable {
+  margin: 5px;
+}
+
+div.cdk-drop-list {
+  border: 1px solid blue;
+}
+
+span.cdk-drop-list {
+  border: 1px solid blue;
+  color: blue;
+}
+
+div.cdk-drop-list > pre:first-child {
+  color: blue;
+}
+
+.cdk-drag {
+  border: 1px solid red;
+  color: red;
+}
+
+.cdk-drag-preview {
+  background-color: pink;
+  border: 1px solid black;
+  color: black;
+}
+
+.cdk-drag-placeholder {
+  background-color: yellow;
+  border: 1px solid black;
+  color: black;
+}
+
+.cdk-drop-list-dragging {
+  background-color: lightcyan;
+  border: 1px solid black;
+  color: black;
+}
+
+.cdk-drop-list-receiving {
+  background-color: lightgreen;
+  border: 1px solid black;
+  color: black;
+}
+
+/* Animate items as they're being sorted. */
+.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Animate an item that has been dropped. */
+.cdk-drag-animating {
+  transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
+}

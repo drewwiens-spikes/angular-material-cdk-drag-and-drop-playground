@@ -1,0 +1,21 @@
+<div class="outer">
+  <pre>cdkDropListGroup</pre>
+  <div cdkDropListGroup class="container">
+    <div
+      class="list"
+      cdkDropList
+      [cdkDropListData]="divarr[i]"
+      (cdkDropListDropped)="drop(i, $event)"
+      *ngFor="let div of divs; index as i"
+    >
+      <pre style="margin-top:0;">cdkDropList</pre>
+      <pre cdkDrag class="draggable" *ngFor="let str of divarr[i]">{{str}}</pre>
+    </div>
+  </div>
+</div>
+<pre style="margin-left: 20px;">Key:  <span class="cdk-drag-preview">.cdk-drag-preview</span> <span class="cdk-drag-placeholder">.cdk-drag-placeholder</span> <span class="cdk-drop-list-dragging">.cdk-drop-list-dragging</span>
+
+      <span class="cdk-drop-list-receiving">.cdk-drop-list-receiving</span> <span class="cdk-drop-list">.cdk-drop-list</span> <span class="cdk-drag">.cdk-drag</span>
+
+Selector to animate items as they're being sorted: ".cdk-drop-list-dragging .cdk-drag"
+Selector to animate an item that has been dropped: ".cdk-drag-animating"</pre>

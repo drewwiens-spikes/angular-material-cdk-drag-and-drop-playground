@@ -1,0 +1,21 @@
+<div class="outer">
+  <pre>cdkDropListGroup  <label><input type="checkbox" [formControl]="disab">disabled</label></pre>
+  <div cdkDropListGroup [cdkDropListGroupDisabled]="disab.value" class="container">
+    <div
+      class="list"
+      cdkDropList
+      [cdkDropListData]="divarr[i]"
+      (cdkDropListDropped)="drop(i, $event)"
+      *ngFor="let div of divs; index as i"
+    >
+      <pre style="margin-top:0;">cdkDropList
+[cdkDropListData]=&quot;arr{{i ? 'B' : 'A'}}&quot;
+(cdkDropListDropped)=&quot;drop($event)&quot;</pre>
+      <hr>
+      <pre>arr{{i ? 'B' : 'A'}} = {{divarr[i] | json}}</pre>
+      <hr>
+      <pre>cdkDrag *ngFor=&quot;let str of arr{{i ? 'B' : 'A'}}&quot;</pre>
+      <pre cdkDrag class="draggable" *ngFor="let str of divarr[i]">{{str}}</pre>
+    </div>
+  </div>
+</div>

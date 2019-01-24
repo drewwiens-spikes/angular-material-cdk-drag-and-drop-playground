@@ -1,0 +1,43 @@
+div.container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+div.list {
+  border: 1px solid black;
+  min-width: 300px;
+  padding: 10px;
+}
+
+.draggable {
+  /* display: block; */
+  max-width: fit-content;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+span > pre.draggable {
+  margin: 5px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.bright {
+  color: white;
+  background-color: #0f0;
+  font-weight: bold;
+  box-shadow: 0 0 20px #0f0;
+  transition-property: background-color box-shadow color;
+  transition-duration: 1s;
+}
+
+.dim {
+  color: gray;
+  transition-property: background-color box-shadow color;
+  transition-duration: 1s;
+}

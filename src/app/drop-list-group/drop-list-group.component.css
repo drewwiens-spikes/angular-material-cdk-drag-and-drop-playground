@@ -1,0 +1,29 @@
+div.container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+div.outer {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 20px;
+}
+
+div.list {
+  border: 1px solid black;
+  min-width: 300px;
+  padding: 10px;
+}
+
+.draggable {
+  /* display: block; */
+  max-width: fit-content;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+span > pre.draggable {
+  margin: 5px;
+}

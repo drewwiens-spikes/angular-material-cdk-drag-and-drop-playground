@@ -1,0 +1,28 @@
+<div class="outer">
+  <pre>cdkDropListGroup</pre>
+  <div cdkDropListGroup class="container">
+    <div
+      class="list"
+      cdkDropList
+      [cdkDropListData]="divarr[i]"
+      [cdkDropListEnterPredicate]="!i ? twoPredicate : noop"
+      (cdkDropListDropped)="drop(i, $event)"
+      *ngFor="let div of divs; index as i"
+    >
+    <pre style="margin-top:0;">cdkDropList
+[cdkDropListData]=&quot;arr{{i ? 'B' : 'A'}}&quot;
+<ng-container *ngIf="!i">[cdkDropListEnterPredicate]=&quot;twoPredicate&quot;</ng-container>
+(cdkDropListDropped)=&quot;drop($event)&quot;</pre>
+      <hr>
+      <pre>cdkDrag
+*ngFor=&quot;let str of arr{{i ? 'B' : 'A'}}&quot;
+[cdkDragData]=&quot;str&quot;</pre>
+      <pre cdkDrag class="draggable" *ngFor="let str of divarr[i]" [cdkDragData]="str">{{str}}</pre>
+    </div>
+  </div>
+</div>
+<pre style="margin-left: 20px;">
+twoPredicate(item: CdkDrag&lt;string&gt;) &#123;
+  return item.data === 'TWO';
+&#125;
+</pre>
